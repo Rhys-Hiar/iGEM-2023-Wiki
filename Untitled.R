@@ -1,0 +1,5 @@
+start.time <- Sys.time()
+protein2 <- read.pdb("Catalase.pdb")
+df2 <- as.data.frame(protein2$atom)
+end.time <- Sys.time()
+time.taken <- round(end.time - start.time,2 )

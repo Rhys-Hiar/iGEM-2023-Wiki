@@ -1,0 +1,89 @@
+---
+title: "Markdown4Hover"
+output: 
+  html_document: 
+    self_contained: false
+date: "2023-09-21"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Style for the thumbnail container */
+.thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Style for the thumbnail image */
+.thumbnail img {
+  width: 200px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  transition: transform 0.2s; /* Smooth zoom effect */
+}
+
+/* Hover effect: Zoom in when hovering over the thumbnail */
+.thumbnail:hover img {
+  transform: scale(1.2); /* Increase the size by 20% */
+}
+
+/* Style for the larger image container */
+.larger-image {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  text-align: center;
+  z-index: 9999; /* Ensure it appears above other content */
+}
+
+/* Style for the larger image itself */
+.larger-image img {
+  max-width: 80%;
+  max-height: 80%;
+  margin-top: 10%;
+}
+</style>
+</head>
+<body>
+
+<!-- Thumbnail 1 -->
+<div class="thumbnail" onclick="showLargerImage(1)">
+  <img src="thumbnail1.jpg" alt="Thumbnail 1">
+</div>
+
+<!-- Thumbnail 2 -->
+<div class="thumbnail" onclick="showLargerImage(2)">
+  <img src="thumbnail2.jpg" alt="Thumbnail 2">
+</div>
+
+<!-- Larger Image Container -->
+<div class="larger-image" onclick="hideLargerImage()">
+  <img src="A2.jpeg" alt="Larger Image">
+</div>
+
+
+
+<!-- JavaScript Function to Run Shiny App -->
+<script>
+function runShinyApp() {
+  // Execute a specific local Shiny app script when the image is clicked
+  // Replace with the file path to the specific Shiny app script you want to run
+  var appScriptPath = 'ViewerTest.R'; // Replace with the desired script name
+  
+  // Load and run the specific Shiny app script
+  Shiny.loadApp(appScriptPath);
+}
+</script>
+
+
+
+</body>
+</html>
+
+
